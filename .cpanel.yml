@@ -1,0 +1,8 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/hijrahas/public_html/
+    - /bin/rsync -av --delete \
+        --exclude '.git' --exclude '.github' --exclude '.cpanel.yml' \
+        --exclude '.DS_Store' --exclude '.well-known' \
+        ./ $DEPLOYPATH
