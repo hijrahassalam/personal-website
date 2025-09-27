@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hijrah Assalam - Software Engineer & Product Manager</title>
+    <meta name="description" content="Hijrah Assalam is a Full-Stack Software Engineer and Product Manager with 5+ years of experience in backend architecture, API integration, and scalable systems.">
+    <meta name="keywords" content="Hijrah Assalam, Software Engineer, Product Manager, Laravel, PHP, Full-Stack Developer">
+    <meta name="author" content="Hijrah Assalam">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hijrahassalam.com/">
+    <meta property="og:title" content="Hijrah Assalam - Software Engineer & Product Manager">
+    <meta property="og:description" content="Building impactful software & inspiring digital growth. Full-Stack Engineer with expertise in Laravel, PHP, and scalable systems.">
+    <meta property="og:image" content="https://hijrahassalam.com/assets/images/profile.webp">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hijrahassalam.com/">
+    <meta property="twitter:title" content="Hijrah Assalam - Software Engineer & Product Manager">
+    <meta property="twitter:description" content="Building impactful software & inspiring digital growth. Full-Stack Engineer with expertise in Laravel, PHP, and scalable systems.">
+    <meta property="twitter:image" content="https://hijrahassalam.com/assets/images/profile.webp">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/icons/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+    <link rel="icon" href="/assets/icons/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+    <link rel="alternate icon" href="/assets/icons/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0B1220" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        accent: {
+                            500: '#a855f7',
+                            600: '#9333ea',
+                        },
+                        surface: {
+                            light: '#f8fafc',
+                            dark: '#0b1220',
+                        }
+                    },
+                    maxWidth: {
+                        '8xl': '96rem',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/app.css">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Hijrah Assalam",
+        "jobTitle": "Software Engineer & Product Manager",
+        "url": "https://hijrahassalam.com",
+        "email": "hello@hijrahassalam.com",
+        "sameAs": [
+            "https://github.com/hijrahassalam",
+            "https://linkedin.com/in/hijrahassalam"
+        ],
+        "knowsAbout": ["Laravel", "PHP", "MySQL", "PostgreSQL", "REST APIs", "Flutter", "Full-Stack Development", "Product Management"],
+        "alumniOf": "Software Engineering",
+        "workLocation": "Indonesia"
+    }
+    </script>
+    
+</head>
+<body class="font-body bg-surface-light dark:bg-surface-dark text-gray-900 dark:text-slate-200 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-primary-600 dark:text-primary-400">
+                        Hijrah Assalam
+                    </a>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link active">Home</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#projects" class="nav-link">Projects</a>
+                        <a href="#writing" class="nav-link">Writing</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Dark mode toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Home</a>
+                <a href="#about" class="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">About</a>
+                <a href="#projects" class="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Projects</a>
+                <a href="#writing" class="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Writing</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16 pb-14 lg:pt-20 lg:pb-18 px-6 hero-aurora noise-overlay">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="grid grid-cols-[1.15fr_1.85fr] gap-12 lg:gap-16 items-center">
+                
+                <!-- Profile Image - Left Column (38%) -->
+                <div class="col-span-2 lg:col-span-1 flex justify-center lg:justify-start">
+                    <div class="profile-container hero-fade-in delay-60">
+                        <div class="avatar-blob"></div>
+                        <img 
+                            src="assets/images/profile.webp" 
+                            alt="Hijrah Assalam - Full-Stack Software Engineer and Product Manager"
+                            class="profile-image float-animation"
+                            onerror="handleImageError(this)"
+                        />
+                    </div>
+                </div>
+                
+                <!-- Content - Right Column (62%) -->
+                <div class="col-span-2 lg:col-span-1 text-center lg:text-left max-w-2xl lg:pr-[6%]">
+                    
+                    <!-- Main Heading -->
+                    <h1 class="font-heading text-5xl lg:text-[52px] font-extrabold tracking-tight mb-4 bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent hero-fade-in delay-100">
+                        Hijrah Assalam
+                    </h1>
+                    
+                    <!-- Tagline -->
+                    <p class="text-xl lg:text-2xl text-gray-600 dark:text-slate-300 mb-3 hero-fade-in delay-140">
+                        Building impactful software & inspiring digital growth.
+                    </p>
+                    
+                    <!-- Role -->
+                    <p class="text-lg text-gray-500 dark:text-slate-400 mb-4 hero-fade-in delay-140">
+                        Full-Stack Engineer & Product Manager (5+ yrs)
+                    </p>
+                    
+                    <!-- Building Line -->
+                    <p class="text-base text-gray-600 dark:text-slate-400 mb-2 hero-fade-in delay-140">
+                        I'm building the <a href="#projects" class="text-indigo-500 hover:text-indigo-400 underline decoration-2 underline-offset-2 transition-colors">UNS Legal Document System</a> — streamlined drafting, review, and approvals.
+                    </p>
+                    
+                    <!-- Rotating Highlights -->
+                    <div class="h-6 mb-8 hero-fade-in delay-140">
+                        <p id="rotating-highlight" class="text-sm text-indigo-400 dark:text-indigo-300 rotating-highlight">
+                            Backend architecture & REST APIs
+                        </p>
+                    </div>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10 hero-fade-in delay-180">
+                        <a href="#projects" class="btn-hero-primary focus-ring">
+                            <svg class="w-5 h-5 mr-2 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                            View Projects
+                        </a>
+                        <a href="#contact" class="btn-secondary focus-ring">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Contact Me
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="flex flex-wrap gap-3 justify-center lg:justify-start hero-fade-in delay-220">
+                        <div class="stat-badge">
+                            <svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            5+ Years • Experience
+                        </div>
+                        
+                        <div class="stat-badge">
+                            <svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                            </svg>
+                            20+ Projects • Professional
+                        </div>
+                        
+                        <div class="stat-badge">
+                            <svg class="w-4 h-4 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            </svg>
+                            Engineer • @ UNS
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        I'm a passionate Full-Stack Software Engineer and Product Manager with over 5 years of experience building scalable systems and impactful digital solutions. I specialize in backend architecture, API integration, and creating robust applications that solve real-world problems.
+                    </p>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                        My expertise spans across modern web technologies, with a strong focus on Laravel, PHP, and database design. I also enjoy working with Flutter for mobile development and implementing frontend patterns that enhance user experience.
+                    </p>
+                    <div class="flex flex-wrap">
+                        <span class="skill-chip">Backend Development</span>
+                        <span class="skill-chip">Laravel</span>
+                        <span class="skill-chip">PHP</span>
+                        <span class="skill-chip">API Integration</span>
+                        <span class="skill-chip">MySQL/PostgreSQL</span>
+                        <span class="skill-chip">Full-Stack</span>
+                        <span class="skill-chip">Flutter</span>
+                        <span class="skill-chip">Product Management</span>
+                        <span class="skill-chip">System Architecture</span>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Experience</h3>
+                        <p class="text-gray-600 dark:text-gray-300">5+ years in software engineering, specializing in backend architecture and scalable systems</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Focus Areas</h3>
+                        <p class="text-gray-600 dark:text-gray-300">REST APIs, Database Design, System Integration, and Product Strategy</p>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-primary-600 dark:text-primary-400">Passion</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Creating digital solutions that make a meaningful impact on users and businesses</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto mb-4"></div>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    Here are some of the projects I've worked on, showcasing my expertise in full-stack development and system architecture.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: E-Book Yudigital.id -->
+                <div class="card-surface project-card">
+                    <div class="h-48 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">E-Book Yudigital.id</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Digital book platform with interactive content and user management system.</p>
+                        <div class="mb-4">
+                            <span class="inline-block px-2 py-1 text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded mr-2">Backend Developer</span>
+                            <span class="badge">Laravel</span>
+                        </div>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">Visit →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Lapor Diri PPG FKIP UNS -->
+                <div class="card-surface project-card">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Lapor Diri PPG FKIP UNS</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Web registration and certificate management system for educational programs.</p>
+                        <div class="mb-4">
+                            <span class="inline-block px-2 py-1 text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded mr-2">Full-Stack Developer</span>
+                            <span class="badge">Laravel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Sistem PLP -->
+                <div class="card-surface project-card">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Sistem PLP</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Comprehensive internship management system with tracking and reporting features.</p>
+                        <div class="mb-4">
+                            <span class="inline-block px-2 py-1 text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded mr-2">Full-Stack Developer</span>
+                            <span class="badge">CodeIgniter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Bank Sampah Pucangan -->
+                <div class="card-surface project-card">
+                    <div class="h-48 bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Bank Sampah Pucangan</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Waste bank management system serving 8 villages with transaction tracking.</p>
+                        <div class="mb-4">
+                            <span class="inline-block px-2 py-1 text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded mr-2">Backend Developer</span>
+                            <span class="badge">Laravel</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">Repository →</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">Live Site →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Interactive Digital Worksheet -->
+                <div class="card-surface project-card">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Interactive Digital Worksheet (IDW)</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">Digital worksheets platform for elementary schools with interactive learning features.</p>
+                        <div class="mb-4">
+                            <span class="inline-block px-2 py-1 text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded mr-2">Web Developer</span>
+                            <span class="badge">Laravel</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">Repository →</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">Live Site →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: DeteksiCOVID -->
+                <div class="card-surface project-card">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">DeteksiCOVID</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-3">COVID detection system using CNN on X-Ray/CT images with AI-powered analysis.</p>
+                        <div class="mb-4">
+                            <span class="inline-block px-2 py-1 text-xs bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded mr-2">AI Engineer & Developer</span>
+                            <span class="badge">TensorFlow.js + PHP</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">Repository →</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">Live Site →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing Section -->
+    <section id="writing" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">Writing & Insights</h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto mb-4"></div>
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                    Thoughts on software engineering, product development, and technology trends.
+                </p>
+            </div>
+            
+            <div class="space-y-8">
+                <!-- Blog Post 1 -->
+                <article class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <time datetime="2024-01-15">January 15, 2024</time>
+                            <span class="mx-2">•</span>
+                            <span>5 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                            Building Scalable APIs with Laravel: Best Practices
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Exploring advanced techniques for creating robust, maintainable APIs that can handle growth. From proper resource structuring to implementing efficient caching strategies...
+                        </p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <time datetime="2024-01-08">January 8, 2024</time>
+                            <span class="mx-2">•</span>
+                            <span>7 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                            The Product Manager's Guide to Technical Debt
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            How to balance feature development with maintaining code quality. Understanding the hidden costs of technical debt and strategies for effective communication with stakeholders...
+                        </p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="p-8">
+                        <div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-3">
+                            <time datetime="2023-12-20">December 20, 2023</time>
+                            <span class="mx-2">•</span>
+                            <span>4 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                            Database Design Patterns for Modern Web Applications
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Essential database design principles that every full-stack developer should know. From normalization strategies to handling complex relationships in Laravel Eloquent...
+                        </p>
+                        <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline font-medium">
+                            Read more →
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto mb-4"></div>
+                <p class="text-lg text-gray-600 dark:text-gray-300">
+                    Let's discuss your next project or collaboration opportunity.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+                        I'm always interested in hearing about new opportunities, whether it's a challenging project, a collaboration, or just a conversation about technology and product development.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:hello@hijrahassalam.com" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                hello@hijrahassalam.com
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <a href="https://github.com/hijrahassalam" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                github.com/hijrahassalam
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 mr-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <a href="https://linkedin.com/in/hijrahassalam" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                                linkedin.com/in/hijrahassalam
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form id="contact-form" action="/contact.php" method="POST" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-colors resize-vertical"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-primary">
+                            Send Message
+                        </button>
+                    </form>
+                    
+                    <!-- Success/Error Messages -->
+                    <div id="form-success" class="hidden mt-4 p-4 bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300 rounded-lg">
+                        Thank you for your message! I'll get back to you soon.
+                    </div>
+                    
+                    <div id="form-error" class="hidden mt-4 p-4 bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 rounded-lg">
+                        Sorry, there was an error sending your message. Please try again or contact me directly.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-gray-600 dark:text-gray-300">
+                        © <span id="current-year">2024</span> Hijrah Assalam. All rights reserved.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://github.com/hijrahassalam" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/hijrahassalam" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

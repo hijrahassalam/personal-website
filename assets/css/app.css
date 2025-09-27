@@ -1,0 +1,645 @@
+/* Custom styles for Hijrah Assalam Personal Website */
+
+/* CSS Variables for Color Palette and Fonts */
+:root {
+    --primary-50: #eef2ff;
+    --primary-100: #e0e7ff;
+    --primary-500: #6366f1;
+    --primary-600: #4f46e5;
+    --primary-700: #4338ca;
+    --accent: #a855f7;
+    --surface-light: #f8fafc;
+    --surface-dark: #0b1220;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --info: #22d3ee;
+    
+    /* Font families */
+    --font-heading: "Sora", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Font utilities */
+.font-heading { 
+    font-family: var(--font-heading); 
+}
+
+.font-body { 
+    font-family: var(--font-body); 
+}
+
+/* Micro-typography */
+h1, h2, h3 { 
+    letter-spacing: -0.02em; 
+}
+
+body { 
+    font-feature-settings: "ss01" 1, "case" 1; 
+}
+
+/* Navigation styles */
+.nav-link {
+    position: relative;
+    padding: 0.5rem 0.75rem;
+    color: rgb(75, 85, 99);
+    transition: color 0.2s ease;
+}
+
+.dark .nav-link {
+    color: rgb(209, 213, 219);
+}
+
+.nav-link:hover {
+    color: rgb(99, 102, 241);
+}
+
+.dark .nav-link:hover {
+    color: rgb(129, 140, 248);
+}
+
+.nav-link.active {
+    color: rgb(99, 102, 241);
+}
+
+.dark .nav-link.active {
+    color: rgb(129, 140, 248);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(99, 102, 241);
+    transition: width 0.3s ease;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Skill chips */
+.skill-chip {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    background-color: rgb(224, 231, 255);
+    color: rgb(55, 48, 163);
+    border-radius: 9999px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.dark .skill-chip {
+    background-color: rgb(49, 46, 129);
+    color: rgb(199, 210, 254);
+}
+
+.skill-chip:hover {
+    background-color: rgb(199, 210, 254);
+}
+
+.dark .skill-chip:hover {
+    background-color: rgb(67, 56, 202);
+}
+
+/* New Utility Classes */
+
+/* Stat badges for hero section */
+.stat-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: white;
+    color: rgb(51, 65, 85);
+    border: 1px solid rgb(226, 232, 240);
+    transition: all 0.3s ease;
+}
+
+.dark .stat-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgb(241, 245, 249);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.stat-badge:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .stat-badge:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge for tech/role labels */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    background-color: var(--primary-50);
+    color: var(--primary-700);
+    border: 1px solid rgb(199, 210, 254);
+}
+
+.dark .badge {
+    background-color: rgba(99, 102, 241, 0.18);
+    color: rgb(199, 210, 254);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Card surface utility */
+.card-surface {
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(241, 245, 249);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+}
+
+.dark .card-surface {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.card-surface:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .card-surface:hover {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Project cards - updated */
+.project-card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(241, 245, 249);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.dark .project-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03), 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .project-card:hover {
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 20px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero aurora background */
+.hero-aurora {
+    background: 
+        radial-gradient(ellipse 800px 600px at 20% 40%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 1000px 800px at 80% 60%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 600px 400px at 40% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+    position: relative;
+}
+
+.hero-aurora::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Noise overlay */
+.noise-overlay {
+    position: relative;
+}
+
+.noise-overlay::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+/* Avatar blob background */
+.avatar-blob {
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    right: -20%;
+    bottom: -20%;
+    background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.06) 40%, transparent 70%);
+    border-radius: 50%;
+    transition: transform 0.6s ease;
+    z-index: -1;
+}
+
+.profile-container:hover .avatar-blob {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* Profile image container with gradient ring */
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: linear-gradient(135deg, var(--primary-500), var(--accent));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.8;
+    transition: opacity 0.6s ease;
+}
+
+.profile-container:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced profile image - larger for visual balance */
+.profile-image {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid white;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12), 0 12px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.dark .profile-image {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark .profile-image:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Rotating highlights animation */
+.rotating-highlight {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.rotating-highlight.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero button styles */
+.btn-hero-primary {
+    background: linear-gradient(135deg, rgb(99, 102, 241), rgb(139, 92, 246));
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero-primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 35px rgba(99, 102, 241, 0.4);
+}
+
+.btn-hero-primary:active {
+    filter: brightness(0.95);
+    transform: translateY(0);
+}
+
+.btn-hero-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgb(226, 232, 240);
+    background: transparent;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.dark .btn-hero-secondary {
+    color: rgb(241, 245, 249);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.dark .btn-hero-secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Focus ring utility for accessibility */
+.focus-ring {
+    outline: none;
+}
+
+.focus-ring:focus-visible {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px rgb(99, 102, 241);
+}
+
+.dark .focus-ring:focus-visible {
+    box-shadow: 0 0 0 2px rgb(11, 18, 32), 0 0 0 4px rgb(99, 102, 241);
+}
+
+/* Secondary button - readable in light mode, elegant in dark */
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    color: rgb(51, 65, 85);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(203, 213, 225);
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    border-color: rgb(148, 163, 184);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark .btn-secondary {
+    background-color: transparent;
+    color: rgb(241, 245, 249);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: none;
+}
+
+.dark .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-secondary[disabled],
+.btn-secondary[aria-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Hero entrance animations */
+.hero-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: heroFadeIn 0.8s ease forwards;
+}
+
+.hero-fade-in.delay-60 {
+    animation-delay: 60ms;
+}
+
+.hero-fade-in.delay-100 {
+    animation-delay: 100ms;
+}
+
+.hero-fade-in.delay-140 {
+    animation-delay: 140ms;
+}
+
+.hero-fade-in.delay-180 {
+    animation-delay: 180ms;
+}
+
+.hero-fade-in.delay-220 {
+    animation-delay: 220ms;
+}
+
+@keyframes heroFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Legacy animation classes for other sections */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-in-up.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.fade-in-up.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.fade-in-up.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.fade-in-up.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.fade-in-up.delay-500 {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Floating animation for profile image */
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Quick stats styling */
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.dark .stat-item {
+    background: rgba(31, 41, 55, 0.8);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.stat-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: rgb(99, 102, 241);
+    flex-shrink: 0;
+}
+
+/* Button enhancements */
+.btn-primary {
+    background: linear-gradient(135deg, rgb(99, 102, 241), rgb(139, 92, 246));
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.btn-secondary {
+    border: 2px solid rgb(99, 102, 241);
+    color: rgb(99, 102, 241);
+    background: transparent;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(99, 102, 241);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn-secondary:hover::before {
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.dark .btn-secondary {
+    border-color: rgb(129, 140, 248);
+    color: rgb(129, 140, 248);
+}
+
+.dark .btn-secondary::before {
+    background: rgb(129, 140, 248);
+}
+
+/* Focus styles for accessibility */
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+    outline: 2px solid rgb(99, 102, 241);
+    outline-offset: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .stat-item {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+}

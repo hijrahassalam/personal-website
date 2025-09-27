@@ -1,0 +1,17 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="h-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- White background -->
+  <rect width="32" height="32" rx="6" fill="white" />
+  
+  <!-- Subtle ring -->
+  <rect x="0.5" y="0.5" width="31" height="31" rx="5.5" fill="none" stroke="#E2E8F0" stroke-width="1" />
+  
+  <!-- Letter H with gradient -->
+  <path d="M9 8v16h3v-6h6v6h3V8h-3v7h-6V8H9z" fill="url(#h-gradient)" />
+</svg>
